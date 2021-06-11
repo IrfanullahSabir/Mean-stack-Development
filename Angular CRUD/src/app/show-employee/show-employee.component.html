@@ -1,0 +1,22 @@
+<div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">CINC</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor ="let emp of emplDatafromService; let i = index">
+            <th scope="row">{{emp.id}}</th>
+            <td>{{emp.name}}</td>
+            <td>{{emp.cnic}}</td>
+            <td>{{emp.salary}}</td>
+            <td><button (click)="delEmployee(emp.id)" class="del_btn">Delete </button>|<button (click)="editEmployee(emp.id)" class="edit_btn" >Update</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>

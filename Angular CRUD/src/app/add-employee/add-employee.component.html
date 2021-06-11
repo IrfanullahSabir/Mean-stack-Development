@@ -1,0 +1,47 @@
+<div class="container" *ngIf="ngIf">
+    <h2>Enter Empolyee Data</h2>
+    <form (ngSubmit)="onSubmit(formVal)" #formVal="ngForm"  >
+        <div class="form-group">
+            <label>ID:</label>
+            <input type="number" class="form-control" placeholder="Enter Employee Id" name="id" ngModel>
+          </div>
+     <div class="form-group" >
+        <label>Employee name:</label>
+        <input type="text" class="form-control"  placeholder="Enter Employee name" name="name" ngModel>
+     </div>
+      <div class="form-group">
+        <label>CNIC:</label>
+        <input type="test" class="form-control" placeholder="Enter CNIC" name="cnic" ngModel>
+      </div>
+      <div class="form-group">
+        <label>Salary:</label>
+        <input type="number" class="form-control" placeholder="Enter salary" name="salary" ngModel>
+      </div>
+      
+      <button type="submit" class="btn btn-default"  >Submit</button>
+    </form>
+  </div>
+
+  <div class="container" *ngIf="!ngIf">
+    <h2>Edit data</h2>
+    <form (ngSubmit)="updateUserfunction(form)"  #form="ngForm">
+        <div class="form-group">
+            <label>ID:</label>
+            <input type="number" class="form-control" name="id" ngModel={{empForUp[0]}}>
+          </div>
+     <div class="form-group" >
+        <label>Employee name:</label>
+        <input type="text" class="form-control"  name="name" ngModel={{empForUp[1]}}>
+     </div>
+      <div class="form-group">
+        <label>CNIC:</label>
+        <input type="test" class="form-control" name="cnic" ngModel={{empForUp[2]}}>
+      </div>
+      <div class="form-group">
+        <label>Salary:</label>
+        <input type="number" class="form-control"  name="salary" ngModel={{empForUp[3]}}>
+      </div>
+      
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
